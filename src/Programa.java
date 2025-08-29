@@ -52,33 +52,35 @@ public class Programa {
                 string = scan.next();
                 valid=true;
             } catch (Exception e) {
-               System.out.println("Texto no aceptado, intente nuevamente");
-            }
-            }while (!valid);
-
+               System.out.println("Texto no aceptado, intente nuevamente");}
+            } while (!valid);
         return string;
     }
 
     public static boolean verificarRevesDerecho(){
         String string= recibirString();
-        String[] s=;
+        char[] s= string.toLowerCase().toCharArray();
         boolean valid;
         for (int i=0; i<s.length;i++){
-            if (s[i].equals(s[(s.length - 1) - i])){
+            if (s[i]==(s[(s.length - 1) - i])){
                 continue;
-            } return false;
+            } else return false;
         }
         return true;
     }
 
     public static void mostrarResultRevesDer(boolean valido){
-        if (valido == true){
-
-        }
+        if (valido) System.out.println("Tu frase es Revés derecho");
+        else System.out.println("Tu frase no es Revés derecho");
     }
 
     public static void contarVocales(){
         String string= recibirString();
+        char[] s= string.toLowerCase().toCharArray();
+        int contador=0;
+        for (int i=0; i<s.length;i++){
+            if
+        }
 
     }
 
