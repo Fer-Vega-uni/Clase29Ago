@@ -8,7 +8,9 @@ public class Programa {
         do{
             mostrarMenu();
             opcion= recibirOpcion();
+            ejecutarOpcion(opcion);
         } while (opcion!=5);
+        System.out.println("Saliendo....");
     }
 
     public static void mostrarMenu(){
@@ -32,4 +34,46 @@ public class Programa {
          return opcionRecibida;
     }
 
+    public static void ejecutarOpcion(int opcion){
+        switch (opcion){
+            case 1: verificarRevesDerecho();
+            case 2: contarVocales();
+            case 3: encriptarTexto();
+            case 4: desencriptarTexto();
+        }
+    }
+
+    public static String recibirString(){
+        Scanner scan = new Scanner(System.in);
+        String string = "";
+        boolean valid =false;
+        do {
+            try {
+                string = scan.next();
+                valid=true;
+            } catch (Exception e) {
+               System.out.println("Texto no aceptado, intente nuevamente");
+            }
+            }while (!valid);
+
+        return string;
+    }
+
+    public static void verificarRevesDerecho(){
+        String string= recibirString();
+
+    }
+
+    public static void contarVocales(){
+        String string= recibirString();
+
+    }
+
+    public static void encriptarTexto(){
+        String string= recibirString();
+    }
+
+    public static void desencriptarTexto(){
+        String string= recibirString();
+    }
 }
