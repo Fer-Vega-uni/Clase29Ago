@@ -37,7 +37,7 @@ public class Programa {
     public static void ejecutarOpcion(int opcion){
         switch (opcion){
             case 1: mostrarResultRevesDer(verificarRevesDerecho());
-            case 2: contarVocales();
+            case 2: mostrarResultContV(contarVocales());
             case 3: encriptarTexto();
             case 4: desencriptarTexto();
         }
@@ -60,11 +60,9 @@ public class Programa {
     public static boolean verificarRevesDerecho(){
         String string= recibirString();
         char[] s= string.toLowerCase().toCharArray();
-        boolean valid;
         for (int i=0; i<s.length;i++){
-            if (s[i]==(s[(s.length - 1) - i])){
-                continue;
-            } else return false;
+            if (s[i]!=(s[(s.length - 1) - i]))
+            {return false;}
         }
         return true;
     }
@@ -74,23 +72,53 @@ public class Programa {
         else System.out.println("Tu frase no es Revés derecho");
     }
 
-    public static void contarVocales(){
+    public static int contarVocales(){
         String string= recibirString();
         char[] s= string.toLowerCase().toCharArray();
         int contador=0;
         for (char c : s) {
             if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
                 contador++;
-            }
-        }
+            }}
+        return contador;
+    }
 
+    public static void mostrarResultContV(int contador){
+        if (contador ==0) System.out.println("No hay vocales en tu string");
+        else System.out.println("Tu string tiene " + contador+ " vocales");
     }
 
     public static void encriptarTexto(){
         String string= recibirString();
+        char[] s= string.toLowerCase().toCharArray();
+        for (int c=0; c<s.length;c++) {
+            switch (c){
+                case 'a': s[c]= '@';
+                case 'e': s[c]= '&';
+                case 'i': s[c]= '!';
+                case 'o': s[c]= '*';
+                case 'u': s[c]= '#';
+            }
+        }
+        System.out.println("Tu string encriptada es: ");
+        for (char c : s) System.out.print(c);
+        System.out.println();
     }
 
     public static void desencriptarTexto(){
         String string= recibirString();
+        char[] s= string.toLowerCase().toCharArray();
+        for (int c=0; c<s.length;c++) {
+            switch (c){
+                case '@': s[c]= 'a';
+                case '&': s[c]= 'e';
+                case '!': s[c]= 'i';
+                case '*': s[c]= 'o';
+                case '#': s[c]= 'u';
+            }
+        }
+        System.out.println("Tu string desencriptada es: ");
+        for (char c : s) System.out.print(c);
+        System.out.println();
     }
 }
