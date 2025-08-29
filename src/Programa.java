@@ -36,10 +36,10 @@ public class Programa {
 
     public static void ejecutarOpcion(int opcion){
         switch (opcion){
-            case 1: mostrarResultRevesDer(verificarRevesDerecho());
-            case 2: mostrarResultContV(contarVocales());
-            case 3: encriptarTexto();
-            case 4: desencriptarTexto();
+            case 1: mostrarResultRevesDer(verificarRevesDerecho());break;
+            case 2: mostrarResultContV(contarVocales());break;
+            case 3: encriptarTexto(); break;
+            case 4: desencriptarTexto(); break;
         }
     }
 
@@ -93,11 +93,11 @@ public class Programa {
         char[] s= string.toLowerCase().toCharArray();
         for (int c=0; c<s.length;c++) {
             switch (c){
-                case 'a': s[c]= '@';
-                case 'e': s[c]= '&';
-                case 'i': s[c]= '!';
-                case 'o': s[c]= '*';
-                case 'u': s[c]= '#';
+                case 'a': s[c]= '@'; break;
+                case 'e': s[c]= '&'; break;
+                case 'i': s[c]= '!'; break;
+                case 'o': s[c]= '*'; break;
+                case 'u': s[c]= '#'; break;
             }
         }
         System.out.println("Tu string encriptada es: ");
@@ -110,11 +110,11 @@ public class Programa {
         char[] s= string.toLowerCase().toCharArray();
         for (int c=0; c<s.length;c++) {
             switch (c){
-                case '@': s[c]= 'a';
-                case '&': s[c]= 'e';
-                case '!': s[c]= 'i';
-                case '*': s[c]= 'o';
-                case '#': s[c]= 'u';
+                case '@': s[c]= 'a'; break;
+                case '&': s[c]= 'e'; break;
+                case '!': s[c]= 'i'; break;
+                case '*': s[c]= 'o'; break;
+                case '#': s[c]= 'u'; break;
             }
         }
         System.out.println("Tu string desencriptada es: ");
