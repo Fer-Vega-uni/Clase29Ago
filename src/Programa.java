@@ -4,7 +4,7 @@ public class Programa {
     public static void main(String[] args) {        menu();    }
 
     public static void menu(){
-        int opcion=0;
+        int opcion;
         do{
             mostrarMenu();
             opcion= recibirOpcion();
@@ -36,7 +36,7 @@ public class Programa {
 
     public static void ejecutarOpcion(int opcion){
         switch (opcion){
-            case 1: verificarRevesDerecho();
+            case 1: mostrarResultRevesDer(verificarRevesDerecho());
             case 2: contarVocales();
             case 3: encriptarTexto();
             case 4: desencriptarTexto();
@@ -59,9 +59,22 @@ public class Programa {
         return string;
     }
 
-    public static void verificarRevesDerecho(){
+    public static boolean verificarRevesDerecho(){
         String string= recibirString();
+        String[] s=;
+        boolean valid;
+        for (int i=0; i<s.length;i++){
+            if (s[i].equals(s[(s.length - 1) - i])){
+                continue;
+            } return false;
+        }
+        return true;
+    }
 
+    public static void mostrarResultRevesDer(boolean valido){
+        if (valido == true){
+
+        }
     }
 
     public static void contarVocales(){
