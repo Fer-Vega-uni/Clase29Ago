@@ -78,8 +78,10 @@ public class Programa {
         String string= recibirString();
         char[] s= string.toLowerCase().toCharArray();
         int contador=0;
-        for (int i=0; i<s.length;i++){
-            if
+        for (char c : s) {
+            if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+                contador++;
+            }
         }
 
     }
